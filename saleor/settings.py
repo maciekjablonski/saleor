@@ -151,6 +151,7 @@ INSTALLED_APPS = [
     'saleor.registration',
     'saleor.dashboard',
     'saleor.shipping',
+    'saleor.search',
 
     # External apps
     'versatileimagefield',
@@ -164,7 +165,8 @@ INSTALLED_APPS = [
     'selectable',
     'materializecssform',
     'rest_framework',
-    'webpack_loader'
+    'webpack_loader',
+    'haystack'
 ]
 
 LOGGING = {
@@ -305,3 +307,12 @@ WEBPACK_LOADER = {
         'IGNORE': [
             r'.+\.hot-update\.js',
             r'.+\.map']}}
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'saleor',
+    },
+}
