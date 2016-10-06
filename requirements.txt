@@ -34,7 +34,10 @@ django-webpack-loader==0.3.3
 Django==1.10.3            # via django-absolute, django-emailit, django-model-utils, django-payments, django-prices, django-prices-openexchangerates, jsonfield
 djangorestframework==3.5.2
 fake-factory==0.7.2
+funcsigs==1.0.2           # via mock
 google-i18n-address==2.0.0
+elasticsearch==2.4.0
+
 google-measurement-protocol==0.1.6
 idna==2.1                 # via cryptography
 jsonfield==1.0.3
@@ -64,6 +67,7 @@ six==1.10.0               # via cryptography, fake-factory, mock, purl, python-d
 stripe==1.41.1            # via django-payments
 suds-jurko==0.6           # via django-payments
 unidecode==0.4.19
+urllib3==1.18             # via elasticsearch
 uwsgi==2.0.14
 Whoosh==2.7.4
 xmltodict==0.10.2         # via django-payments
