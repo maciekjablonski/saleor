@@ -14,6 +14,7 @@ from .product.urls import urlpatterns as product_urls
 from .registration.urls import urlpatterns as registration_urls
 from .userprofile.urls import urlpatterns as userprofile_urls
 from .dashboard.urls import urlpatterns as dashboard_urls
+from .search.urls import urlpatterns as search_urls
 
 
 admin.autodiscover()
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^checkout/', include(checkout_urls, namespace='checkout')),
     url(r'^dashboard/', include(dashboard_urls, namespace='dashboard')),
     url(r'^order/', include(order_urls, namespace='order')),
+    url(r'^search/', include(search_urls, namespace='search')),
     url(r'^products/', include(product_urls, namespace='product')),
     url(r'^profile/', include(userprofile_urls, namespace='profile')),
     url(r'^selectable/', include('selectable.urls')),
