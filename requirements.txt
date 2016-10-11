@@ -65,6 +65,7 @@ stripe==1.41.1            # via django-payments
 suds-jurko==0.6           # via django-payments
 unidecode==0.4.19
 uwsgi==2.0.14
+Whoosh==2.7.4
 xmltodict==0.10.2         # via django-payments
 
 # The following packages are commented out because they are
