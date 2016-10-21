@@ -70,7 +70,7 @@
             <li class="global-search">
               <form method="get" action="{% url "search:dashboard-search" %}">
                 <input id="icon_prefix" type="text" class="validate" placeholder="Search" name="q" value="{% if query %}{{ query }}{% endif %}">
-                <button class="btn-flat" type="submit">
+                <button class="btn-flat search-button" type="submit">
                   <i class="material-icons left ">search</i>
                 </button>
               </form>

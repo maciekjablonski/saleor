@@ -99,13 +99,6 @@ header {
           display: none;
         }
       }
-      button {
-        display: inline-block;
-        padding: 0;
-      }
-      .btn-flat:hover {
-        background-color: transparent;
-      }
       i {
         color: white;
         margin-top: -1rem;
@@ -161,6 +154,16 @@ header {
 
 .main {
   margin-top: 1.5rem;
+}
+
+.search-button {
+  display: inline-block;
+  padding: 0;
+  width: auto;
+  &:hover {
+    background-color: transparent;
+    
+  }
 }
 
 .modal-content {
