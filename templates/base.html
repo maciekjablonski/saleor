@@ -49,14 +49,6 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <form action="{% url "search:search" %}" method="get" class="navbar-form navbar-right">
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" name="q">
-                                    </div>
-                                    <input type="submit" class="btn btn-default" value="Search">
-                                </form>
-                            </li>
-                            <li>
                                 <a href="{% url "cart:index" %}"><i class="glyphicon glyphicon-shopping-cart"></i> {% trans "Cart" %} {% if cart_counter %}<span class="badge">{{ cart_counter }}</span>{% endif %}</a>
                             </li>
                             {% if user.is_authenticated %}
@@ -107,6 +99,18 @@
             <div class="row">
                 <div class="col-sm-12">
                     {% block content %}
+                        <div class="well">
+                            <form action="{% url "search:search" %}"  method="get">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  name="q"  placeholder="Search..." value="{% if query %}{{ query }}{% endif %}">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default">
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
                         <div class="row">
                             {% include "category/_items.html" %}
                         </div>
