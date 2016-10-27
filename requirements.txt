@@ -36,7 +36,6 @@ djangorestframework==3.5.2
 fake-factory==0.7.2
 funcsigs==1.0.2           # via mock
 google-i18n-address==2.0.0
-elasticsearch==2.4.0
 google-measurement-protocol==0.1.6
 idna==2.1                 # via cryptography
 jsonfield==1.0.3
