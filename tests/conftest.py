@@ -1,9 +1,13 @@
 # coding: utf-8
 from __future__ import unicode_literals
 
+import os
+
 import pytest
 from django.contrib.auth.models import AnonymousUser
+from django.core.management import call_command
 from mock import Mock
+import haystack
 
 from saleor.cart import decorators
 from saleor.cart.models import Cart
@@ -105,3 +109,15 @@ def anonymous_checkout():
 @pytest.fixture
 def voucher(db):  # pylint: disable=W0613
     return Voucher.objects.create(code='mirumee', discount_value=20)
+
+
+@pytest.fixture
+def index(db, settings, request):
+    settings.HAYSTACK_CONNECTIONS = {
+        'default': {
+            'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+            'STORAGE': 'file',
+            'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index_test'),
+        }}
+    request.addfinalizer(lambda: call_command('clear_index', interactive=False))
+    haystack.connections.reload('default')
